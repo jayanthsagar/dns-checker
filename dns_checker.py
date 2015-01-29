@@ -2,17 +2,6 @@ import os
 import subprocess
 from settings import *
 
-<<<<<<< HEAD
-=======
-"""variables"""
-#pvt_dns = {'ns3_pvt':'10.4.12.160', 'ns4_pvt':'10.4.12.221'}
-#a_records = {'proxy.vlabs.ac.in':'10.4.12.237', 'vlabs.ac.in':'10.4.12.211', 'vlead.vlabs.ac.in':'10.4.12.153', 'ns4-pvt.vlabs.ac.in':'10.4.12.221' }
-#mx_records = ['ASPMX.L.GOOGLE.COM.', 'ALT1.ASPMX.L.GOOGLE.COM.', 'ALT2.ASPMX.L.GOOGLE.COM.', 'ASPMX2.GOOGLEMAIL.COM.', 'ASPMX3.GOOGLEMAIL.COM.']
-#ns_records = ['ns3-pvt.vlabs.ac.in.', 'ns4-pvt.vlabs.ac.in.']
-#ns3_pvt = '10.4.12.160'
-#ns4_pvt = '10.4.12.221'
-
->>>>>>> 6937befd24f6fe1fc99c4609bce30ae3b7762015
 def check_ns_records():
 	for ns in pvt_dns:
 		cmd = "dig -t NS @"+pvt_dns[ns]+" "+zone+" +short | sort"
@@ -57,7 +46,6 @@ def check_zonetransfer():
 	"""if can be done at last"""
 	pass
 
-<<<<<<< HEAD
 def proc(cmd):
 	proc = subprocess.Popen(cmd,stdout=subprocess.PIPE,shell=True)
 	out,err = proc.communicate()
@@ -73,12 +61,3 @@ def main():
 
 if __name__ == '__main__':
 	main()
-=======
-print '===================#checking A records#===================='
-print check_a_records()
-print '===================#checking MX records#==================='
-print check_mx_records()	
-print '===================#checking NS records#==================='
-print check_ns_records()
-
->>>>>>> 6937befd24f6fe1fc99c4609bce30ae3b7762015
