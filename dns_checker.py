@@ -11,7 +11,7 @@ from settings import *
 #ns3_pvt = '10.4.12.160'
 #ns4_pvt = '10.4.12.221'
 
-def check_NS_records():
+def check_ns_records():
 	for ns in pvt_dns:
 		cmd = "dig -t NS @"+pvt_dns[ns]+" vlabs.ac.in +short | sort"
 		#print cmd
@@ -26,7 +26,7 @@ def check_NS_records():
 
 	return True
 
-def check_MX_records():
+def check_mx_records():
 	for ns in pvt_dns:
 		cmd = "dig -t MX @"+pvt_dns[ns]+" vlabs.ac.in +short | sort "
 		#print cmd
@@ -44,7 +44,7 @@ def check_MX_records():
 			return False
 	return True
 
-def check_A_records():
+def check_a_records():
 	for ns in pvt_dns:
 
 		for key in a_records:
@@ -69,9 +69,9 @@ def check_zonetransfer():
 	pass
 
 print '===================#checking A records#===================='
-print check_A_records()
+print check_a_records()
 print '===================#checking MX records#==================='
-print check_MX_records()	
+print check_mx_records()	
 print '===================#checking NS records#==================='
-print check_NS_records()
+print check_ns_records()
 
