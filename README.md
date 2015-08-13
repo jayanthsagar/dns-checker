@@ -1,1 +1,1 @@
-script to privated DNS of virtuallabs 
+script to test private DNS of virtuallabs 
